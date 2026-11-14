@@ -13,172 +13,178 @@
 </head>
 <body>
 
-  <div class="container">
-    <!-- ШАПКА САЙТА -->
-    <header class="header">
-      <a href="index.html" class="logo">
-        <span class="logo-main">DcD</span>
-        <span class="logo-divider"></span>
-        <span class="logo-sub">Different<br>Coding Directions</span>
-      </a>
-
-      <!-- Меню для ПК -->
-      <nav class="nav">
-        <a href="pages/projects.html" class="nav-link">Проекты</a>
-        <a href="pages/about.html" class="nav-link">О студии</a>
-        <a href="pages/experiments.html" class="nav-link">Эксперименты</a>
-        <a href="pages/contacts.html" class="nav-link">Контакты</a>
-      </nav>
-
-      <div class="header-actions">
-        <a href="pages/contacts.html" class="btn-outline desktop-only">
-          Сотрудничество <span>→</span>
+  <div class="content-wrapper">
+    <div class="container">
+      <!-- ШАПКА САЙТА -->
+      <header class="header">
+        <a href="index.html" class="logo">
+          <span class="logo-main">DcD</span>
+          <span class="logo-divider"></span>
+          <span class="logo-sub">Different<br>Coding Directions</span>
         </a>
 
-        <!-- Кнопка бургер-меню для телефонов -->
-        <button class="burger-btn" id="burgerBtn" aria-label="Открыть меню">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-    </header>
+        <!-- Меню для ПК -->
+        <nav class="nav">
+          <a href="index.html" class="nav-link active">Главная</a>
+          <a href="pages/projects.html" class="nav-link">Проекты</a>
+          <a href="pages/about.html" class="nav-link">О студии</a>
+          <a href="pages/experiments.html" class="nav-link">Эксперименты</a>
+          <a href="pages/contacts.html" class="nav-link">Контакты</a>
+        </nav>
 
-    <!-- ВЫЕЗЖАЮЩЕЕ МОБИЛЬНОЕ МЕНЮ -->
-    <div class="mobile-menu" id="mobileMenu">
-      <nav class="mobile-nav">
-        <a href="pages/projects.html" class="mobile-link">Проекты</a>
-        <a href="pages/about.html" class="mobile-link">О студии</a>
-        <a href="pages/experiments.html" class="mobile-link">Эксперименты</a>
-        <a href="pages/contacts.html" class="mobile-link">Контакты</a>
-        <a href="pages/contacts.html" class="btn-lime mobile-cta">
-          Сотрудничество <span>→</span>
-        </a>
-      </nav>
-    </div>
+        <div class="header-actions">
+          <a href="pages/contacts.html" class="btn-outline desktop-only">
+            Сотрудничество <span>→</span>
+          </a>
 
-    <!-- ПЕРВЫЙ ЭКРАН (HERO) -->
-    <section class="hero">
-      <div class="hero-content">
-        <div class="accent-line"></div>
-        <h1 class="hero-title">
-          Создаём<br>
-          <span class="text-lime">необычные</span><br>
-          цифровые проекты
-        </h1>
-        <p class="hero-desc">
-          Игры, интерактивные проекты, инструменты и эксперименты с кодом.
-        </p>
-        <a href="#directions" class="btn-lime">
-          Узнать больше <span>→</span>
-        </a>
+          <!-- Кнопка бургер-меню для телефонов -->
+          <button class="burger-btn" id="burgerBtn" aria-label="Открыть меню">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </header>
+
+      <!-- ВЫЕЗЖАЮЩЕЕ МОБИЛЬНОЕ МЕНЮ -->
+      <div class="mobile-menu" id="mobileMenu">
+        <nav class="mobile-nav">
+          <a href="index.html" class="mobile-link">Главная</a>
+          <a href="pages/projects.html" class="mobile-link">Проекты</a>
+          <a href="pages/about.html" class="mobile-link">О студии</a>
+          <a href="pages/experiments.html" class="mobile-link">Эксперименты</a>
+          <a href="pages/contacts.html" class="mobile-link">Контакты</a>
+          <a href="pages/contacts.html" class="btn-lime mobile-cta">
+            Сотрудничество <span>→</span>
+          </a>
+        </nav>
       </div>
 
-      <div class="hero-visual">
-        <img src="assets/images/hero-cube.png" alt="3D абстрактный куб" class="hero-img">
-      </div>
-    </section>
-
-    <!-- БЛОК «НАШИ НАПРАВЛЕНИЯ» -->
-    <section id="directions" class="directions">
-      <div class="directions-header">
-        <div>
+      <!-- ПЕРВЫЙ ЭКРАН (HERO) -->
+      <section class="hero">
+        <div class="hero-content">
           <div class="accent-line"></div>
-          <h2 class="section-title">Наши<br>направления</h2>
+          <h1 class="hero-title">
+            Создаём<br>
+            <span class="text-lime">необычные</span><br>
+            цифровые проекты
+          </h1>
+          <p class="hero-desc">
+            Игры, интерактивные проекты, инструменты и эксперименты с кодом.
+          </p>
+          <a href="#directions" class="btn-lime">
+            Узнать больше <span>→</span>
+          </a>
         </div>
 
-        <div class="slider-controls">
-          <span class="slider-counter">01 / 04</span>
-          <div class="slider-arrows">
-            <button class="arrow-btn" aria-label="Назад">←</button>
-            <button class="arrow-btn" aria-label="Вперёд">→</button>
+        <div class="hero-visual">
+          <!-- Куб в формате .webp с прозрачным фоном -->
+          <img src="assets/images/hero-cube-transparent.png" alt="3D стеклянный куб" class="hero-img">
+        </div>
+      </section>
+
+      <!-- БЛОК «НАШИ НАПРАВЛЕНИЯ» -->
+      <section id="directions" class="directions">
+        <div class="directions-header">
+          <div>
+            <div class="accent-line"></div>
+            <h2 class="section-title">Наши<br>направления</h2>
+          </div>
+
+          <div class="slider-controls">
+            <span class="slider-counter">01 / 04</span>
+            <div class="slider-arrows">
+              <button class="arrow-btn" aria-label="Назад">←</button>
+              <button class="arrow-btn" aria-label="Вперёд">→</button>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="cards-grid">
-        <!-- Карточка 1: Игры -->
-        <a href="pages/projects.html#games" class="card">
-          <img src="assets/images/card-games.jpg" alt="Игры" class="card-bg">
-          <div class="card-overlay"></div>
-          <div class="card-content">
-            <div class="card-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <rect x="2" y="6" width="20" height="12" rx="4"/>
-                <path d="M6 12h4M8 10v4M15 11h.01M18 13h.01"/>
-              </svg>
+        <div class="cards-grid">
+          <!-- Карточка 1: Игры -->
+          <a href="pages/projects.html#games" class="card">
+            <img src="assets/images/card-games.jpg" alt="Игры" class="card-bg">
+            <div class="card-overlay"></div>
+            <div class="card-content">
+              <div class="card-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <rect x="2" y="6" width="20" height="12" rx="4"/>
+                  <path d="M6 12h4M8 10v4M15 11h.01M18 13h.01"/>
+                </svg>
+              </div>
+              <h3 class="card-title">Игры</h3>
+              <p class="card-text">Создаем игровые миры и механики</p>
             </div>
-            <h3 class="card-title">Игры</h3>
-            <p class="card-text">Создаем игровые миры и механики</p>
-          </div>
-        </a>
+          </a>
 
-        <!-- Карточка 2: Программы -->
-        <a href="pages/projects.html#apps" class="card">
-          <img src="assets/images/card-apps.jpg" alt="Программы" class="card-bg">
-          <div class="card-overlay"></div>
-          <div class="card-content">
-            <div class="card-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <polyline points="16 18 22 12 16 6"/>
-                <polyline points="8 6 2 12 8 18"/>
-                <line x1="14" y1="4" x2="10" y2="20"/>
-              </svg>
+          <!-- Карточка 2: Программы -->
+          <a href="pages/projects.html#apps" class="card">
+            <img src="assets/images/card-apps.jpg" alt="Программы" class="card-bg">
+            <div class="card-overlay"></div>
+            <div class="card-content">
+              <div class="card-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <polyline points="16 18 22 12 16 6"/>
+                  <polyline points="8 6 2 12 8 18"/>
+                  <line x1="14" y1="4" x2="10" y2="20"/>
+                </svg>
+              </div>
+              <h3 class="card-title">Программы</h3>
+              <p class="card-text">Пишем полезные и необычные инструменты</p>
             </div>
-            <h3 class="card-title">Программы</h3>
-            <p class="card-text">Пишем полезные и необычные инструменты</p>
-          </div>
-        </a>
+          </a>
 
-        <!-- Карточка 3: Интерактивные проекты -->
-        <a href="pages/projects.html#interactive" class="card">
-          <img src="assets/images/card-inter.jpg" alt="Интерактивные проекты" class="card-bg">
-          <div class="card-overlay"></div>
-          <div class="card-content">
-            <div class="card-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-                <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
-                <line x1="12" y1="22.08" x2="12" y2="12"/>
-              </svg>
+          <!-- Карточка 3: Интерактивные проекты -->
+          <a href="pages/projects.html#interactive" class="card">
+            <img src="assets/images/card-inter.jpg" alt="Интерактивные проекты" class="card-bg">
+            <div class="card-overlay"></div>
+            <div class="card-content">
+              <div class="card-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                  <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                  <line x1="12" y1="22.08" x2="12" y2="12"/>
+                </svg>
+              </div>
+              <h3 class="card-title">Интерактивные проекты</h3>
+              <p class="card-text">Экспериментируем с формой и идеями</p>
             </div>
-            <h3 class="card-title">Интерактивные проекты</h3>
-            <p class="card-text">Экспериментируем с формой и идеями</p>
-          </div>
-        </a>
+          </a>
 
-        <!-- Карточка 4: Эксперименты -->
-        <a href="pages/experiments.html" class="card">
-          <img src="assets/images/card-exp.jpg" alt="Эксперименты" class="card-bg">
-          <div class="card-overlay"></div>
-          <div class="card-content">
-            <div class="card-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M9 3h6M10 3v6l-5 8a2 2 0 0 0 1.7 3h10.6a2 2 0 0 0 1.7-3l-5-8V3"/>
-              </svg>
+          <!-- Карточка 4: Эксперименты -->
+          <a href="pages/experiments.html" class="card">
+            <img src="assets/images/card-exp.jpg" alt="Эксперименты" class="card-bg">
+            <div class="card-overlay"></div>
+            <div class="card-content">
+              <div class="card-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M9 3h6M10 3v6l-5 8a2 2 0 0 0 1.7 3h10.6a2 2 0 0 0 1.7-3l-5-8V3"/>
+                </svg>
+              </div>
+              <h3 class="card-title">Эксперименты</h3>
+              <p class="card-text">Исследуем, пробуем, открываем новое</p>
             </div>
-            <h3 class="card-title">Эксперименты</h3>
-            <p class="card-text">Исследуем, пробуем, открываем новое</p>
-          </div>
-        </a>
-      </div>
-    </section>
+          </a>
+        </div>
+      </section>
+    </div>
   </div>
+
+  <!-- ФУТЕР -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <p class="footer-copy">© 2026 DcD Studio. Все права защищены.</p>
+      <div class="footer-links">
+        <a href="index.html" class="footer-link">Главная</a>
+        <a href="pages/projects.html" class="footer-link">Проекты</a>
+        <a href="pages/about.html" class="footer-link">О студии</a>
+        <a href="pages/experiments.html" class="footer-link">Эксперименты</a>
+        <a href="pages/contacts.html" class="footer-link">Контакты</a>
+      </div>
+    </div>
+  </footer>
 
   <!-- Подключаем скрипты -->
   <script src="js/main.js"></script>
 </body>
-<!-- ФУТЕР -->
-    <footer class="footer">
-      <div class="container footer-content">
-        <p class="footer-copy">© 2026 DcD Studio. Все права защищены.</p>
-        <div class="footer-links">
-          <a href="index.html" class="footer-link">Главная</a>
-          <a href="pages/projects.html" class="footer-link">Проекты</a>
-          <a href="pages/about.html" class="footer-link">О студии</a>
-          <a href="pages/experiments.html" class="footer-link">Эксперименты</a>
-          <a href="pages/contacts.html" class="footer-link">Контакты</a>
-        </div>
-      </div>
-    </footer>
 </html>

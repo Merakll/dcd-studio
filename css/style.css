@@ -42,7 +42,6 @@ a {
   width: 100%;
 }
 
-/* Растягиваем контент, чтобы футер прижимался к низу страницы */
 .content-wrapper {
   flex: 1;
 }
@@ -121,7 +120,7 @@ a {
   background-color: rgba(180, 240, 86, 0.08);
 }
 
-/* --- ЭЛЕМЕНТЫ МОБИЛЬНОГО МЕНЮ (скрыты на ПК) --- */
+/* --- МОБИЛЬНОЕ МЕНЮ --- */
 .burger-btn {
   display: none;
   flex-direction: column;
@@ -148,9 +147,11 @@ a {
 .burger-btn.active span:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
+
 .burger-btn.active span:nth-child(2) {
   opacity: 0;
 }
+
 .burger-btn.active span:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
 }
@@ -262,11 +263,16 @@ a {
   position: absolute;
   width: 340px;
   height: 340px;
-  background: radial-gradient(circle, rgba(180, 240, 86, 0.22) 0%, rgba(15, 16, 14, 0) 70%);
+  background: radial-gradient(
+    circle,
+    rgba(180, 240, 86, 0.22) 0%,
+    rgba(15, 16, 14, 0) 70%
+  );
   z-index: 0;
   pointer-events: none;
 }
 
+/* Анимированный куб: парение */
 .hero-img {
   max-width: 100%;
   height: auto;
@@ -274,6 +280,29 @@ a {
   position: relative;
   z-index: 1;
   object-fit: contain;
+
+  /* Отключаем обработку событий указателя на самой картинке */
+  pointer-events: none;
+
+  animation: floatCube 5s ease-in-out infinite;
+  filter: drop-shadow(0 0 12px rgba(180, 240, 86, 0.15));
+  transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+/* Неоновое свечение при наведении на обёртку */
+.hero-visual:hover .hero-img {
+  filter: drop-shadow(0 0 28px rgba(180, 240, 86, 0.65))
+          brightness(1.1);
+}
+
+@keyframes floatCube {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-16px);
+  }
 }
 
 /* --- НАПРАВЛЕНИЯ --- */
@@ -330,7 +359,6 @@ a {
   color: var(--accent-lime);
 }
 
-/* Сетка карточек */
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -374,7 +402,11 @@ a {
 .card-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(15, 16, 14, 0.2) 0%, rgba(15, 16, 14, 0.92) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(15, 16, 14, 0.2) 0%,
+    rgba(15, 16, 14, 0.92) 100%
+  );
 }
 
 .card-content {
@@ -428,7 +460,11 @@ a {
   transform: translateX(-50%);
   width: 300px;
   height: 200px;
-  background: radial-gradient(circle, rgba(180, 240, 86, 0.15) 0%, rgba(28, 29, 26, 0) 70%);
+  background: radial-gradient(
+    circle,
+    rgba(180, 240, 86, 0.15) 0%,
+    rgba(28, 29, 26, 0) 70%
+  );
   pointer-events: none;
 }
 
@@ -518,9 +554,11 @@ a {
     grid-template-columns: 1fr;
     text-align: left;
   }
+
   .hero-title {
     font-size: 48px;
   }
+
   .cards-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -623,7 +661,7 @@ a {
     padding: 30px 0;
     margin-top: 40px;
   }
-  
+
   .footer-content {
     flex-direction: column;
     text-align: center;
