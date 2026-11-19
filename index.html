@@ -23,7 +23,6 @@
           <span class="logo-sub">Different<br>Coding Directions</span>
         </a>
 
-        <!-- Меню для ПК -->
         <nav class="nav">
           <a href="index.html" class="nav-link active">Главная</a>
           <a href="pages/projects.html" class="nav-link">Проекты</a>
@@ -33,16 +32,8 @@
         </nav>
 
         <div class="header-actions">
-          <a href="pages/contacts.html" class="btn-outline desktop-only">
-            Сотрудничество <span>→</span>
-          </a>
-
-          <!-- Кнопка бургер-меню для телефонов -->
-          <button class="burger-btn" id="burgerBtn" aria-label="Открыть меню">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
+          <a href="pages/contacts.html" class="btn-outline desktop-only">Сотрудничество <span>→</span></a>
+          <button class="burger-btn" id="burgerBtn" aria-label="Открыть меню"><span></span><span></span><span></span></button>
         </div>
       </header>
 
@@ -54,9 +45,11 @@
           <a href="pages/about.html" class="mobile-link">О студии</a>
           <a href="pages/experiments.html" class="mobile-link">Эксперименты</a>
           <a href="pages/contacts.html" class="mobile-link">Контакты</a>
-          <a href="pages/contacts.html" class="btn-lime mobile-cta">
-            Сотрудничество <span>→</span>
-          </a>
+          <a href="pages/contacts.html" class="btn-lime mobile-cta">Сотрудничество <span>→</span></a>
+          <div class="mobile-social">
+            <a href="https://t.me/Dcd_S_tudio" target="_blank" rel="noopener">Telegram</a>
+            <a href="https://vk.ru/dsd_studio" target="_blank" rel="noopener">ВКонтакте</a>
+          </div>
         </nav>
       </div>
 
@@ -79,7 +72,7 @@
 
         <div class="hero-visual">
           <!-- Куб в формате .webp с анимацией левитации и свечения -->
-          <img src="assets/images/hero-cube-transparent.png" alt="3D стеклянный куб" class="hero-img">
+          <div class="hero-tilt" id="heroTilt"><img src="assets/images/hero-cube-transparent.png" alt="3D стеклянный куб" class="hero-img"></div>
         </div>
       </section>
 
@@ -92,15 +85,15 @@
           </div>
 
           <div class="slider-controls">
-            <span class="slider-counter">01 / 04</span>
+            <span class="slider-counter" id="sliderCounter" aria-live="polite">01 / 04</span>
             <div class="slider-arrows">
-              <button class="arrow-btn" aria-label="Назад">←</button>
-              <button class="arrow-btn" aria-label="Вперёд">→</button>
+              <button class="arrow-btn" id="prevBtn" aria-label="Назад">←</button>
+              <button class="arrow-btn" id="nextBtn" aria-label="Вперёд">→</button>
             </div>
           </div>
         </div>
 
-        <div class="cards-grid">
+        <div class="cards-grid" id="cardsTrack">
           <!-- Карточка 1: Игры -->
           <a href="pages/projects.html" class="card">
             <img src="assets/images/card-games.jpg" alt="Игры" class="card-bg">
@@ -167,6 +160,13 @@
           </a>
         </div>
       </section>
+      <section class="about-join-banner social-banner">
+        <div class="about-join-text"><h2>Следите за DcD</h2><p>Новости, скриншоты и демки — в Telegram и ВК.</p></div>
+        <div class="about-join-actions">
+          <a href="https://t.me/Dcd_S_tudio" class="btn-lime" target="_blank" rel="noopener">Telegram-канал</a>
+          <a href="https://vk.ru/dsd_studio" class="btn-outline" target="_blank" rel="noopener">Группа ВК</a>
+        </div>
+      </section>
     </div>
   </div>
 
@@ -180,6 +180,8 @@
         <a href="pages/about.html" class="footer-link">О студии</a>
         <a href="pages/experiments.html" class="footer-link">Эксперименты</a>
         <a href="pages/contacts.html" class="footer-link">Контакты</a>
+        <a href="https://t.me/Dcd_S_tudio" class="footer-link" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://vk.ru/dsd_studio" class="footer-link" target="_blank" rel="noopener">ВК</a>
       </div>
     </div>
   </footer>

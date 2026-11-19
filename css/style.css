@@ -538,7 +538,8 @@ a {
 /* --- СТИЛИ ДЕТАЛЬНОЙ СТРАНИЦЫ ПРОЕКТА --- */
 .project-detail-section {
   padding: 40px 0 80px;
-  max-width: 800px;
+  max-width: 820px;
+  margin: 0 auto; /* центрируем колонку проекта под шапкой */
 }
 
 .back-link {
@@ -1042,3 +1043,118 @@ a {
     font-size: 15px;
   }
 }
+
+/* =====================================================
+   ДОПОЛНЕНИЯ v2: переходы, появление, куб, слайдер,
+   фильтры, девлог, соцссылки
+   ===================================================== */
+
+/* Плавный вход/выход страницы */
+body { animation: pageIn 0.45s ease both; }
+@keyframes pageIn { from { opacity: 0; } }
+body.page-leave { opacity: 0; transition: opacity 0.22s ease; }
+
+/* Появление блоков при скролле (скрываем только если JS работает) */
+[data-reveal] {
+  transition: opacity 0.7s ease var(--d, 0s), transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) var(--d, 0s);
+}
+.js [data-reveal]:not(.is-in) {
+  opacity: 0;
+  transform: translateY(28px);
+}
+
+/* Куб: наклон за курсором (парение остаётся на самой картинке) */
+.hero-tilt {
+  transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform 0.2s ease-out;
+  will-change: transform;
+}
+
+/* Слайдер направлений */
+.cards-grid {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding: 6px 0;
+  margin: -6px 0;
+  cursor: grab;
+}
+.cards-grid::-webkit-scrollbar { display: none; }
+.cards-grid.dragging { scroll-snap-type: none; cursor: grabbing; user-select: none; }
+.cards-grid .card { flex: 0 0 calc((100% - 40px) / 3); scroll-snap-align: start; }
+.arrow-btn:disabled { opacity: 0.35; pointer-events: none; }
+
+/* Теги и фильтры */
+.filter-bar { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px; }
+.chip {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font: 500 13px 'Inter', sans-serif;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, background-color 0.2s;
+}
+.chip:hover { color: var(--text-main); border-color: rgba(180, 240, 86, 0.5); }
+.chip.active { background: var(--accent-lime); color: #0f100e; border-color: var(--accent-lime); }
+.chip:focus-visible, .arrow-btn:focus-visible, .burger-btn:focus-visible { outline: 2px solid var(--accent-lime); outline-offset: 3px; }
+.project-card[hidden], .devlog-entry[hidden] { display: none; }
+.filter-empty { color: var(--text-muted); padding: 30px 0; }
+.card-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px; }
+.tag { font-size: 12px; color: var(--text-muted); border: 1px solid var(--border-color); border-radius: 999px; padding: 3px 10px; }
+
+/* Девлог */
+.devlog-list { position: relative; max-width: 820px; padding-left: 34px; display: flex; flex-direction: column; gap: 22px; margin-bottom: 20px; }
+.devlog-list::before { content: ''; position: absolute; left: 7px; top: 8px; bottom: 8px; width: 1px; background: var(--border-color); }
+.devlog-entry { position: relative; background: var(--card-bg); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 18px; padding: 28px 30px; }
+.devlog-entry::before {
+  content: ''; position: absolute; left: -34px; top: 32px; width: 15px; height: 15px; border-radius: 50%;
+  background: var(--bg-dark); border: 2px solid var(--accent-lime); box-shadow: 0 0 10px rgba(180, 240, 86, 0.5);
+}
+.devlog-meta { font-size: 13px; color: var(--accent-lime); font-weight: 600; margin-bottom: 8px; }
+.devlog-entry h2 { font-size: 22px; letter-spacing: -0.4px; margin-bottom: 10px; }
+.devlog-entry p { color: var(--text-muted); font-size: 15px; line-height: 1.65; margin-bottom: 14px; }
+.devlog-shot { border-radius: 12px; overflow: hidden; height: 200px; margin: 6px 0 16px; border: 1px solid var(--border-color); }
+.devlog-shot img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Исправления: стили, которых не хватало */
+.modal-badge {
+  display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px;
+  background: rgba(180, 240, 86, 0.1); border: 1px solid rgba(180, 240, 86, 0.3);
+  border-radius: 999px; color: var(--accent-lime); font-size: 13px; font-weight: 500; margin-bottom: 18px;
+}
+.project-detail-header { margin-bottom: 10px; }
+.project-detail-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 40px; }
+.img-missing { display: none; }
+.project-img-wrap, .gallery-big-item { background: linear-gradient(135deg, #1c2410, #0f100e); }
+.social-banner { margin-top: 56px; }
+.mobile-social { display: flex; gap: 24px; margin-top: 8px; color: var(--text-muted); font-size: 15px; }
+
+@media (max-width: 1024px) {
+  .cards-grid .card { flex-basis: calc((100% - 20px) / 2); }
+}
+@media (max-width: 768px) {
+  .cards-grid .card { flex-basis: 82%; }
+  .slider-controls { display: flex; }
+  .arrow-btn { display: none; }
+  .devlog-list { padding-left: 26px; }
+  .devlog-entry { padding: 22px 20px; }
+  .devlog-entry::before { left: -26px; }
+  .project-detail-actions .btn-lime, .project-detail-actions .btn-outline { width: 100%; justify-content: center; }
+}
+
+/* Уважаем настройку «уменьшить анимацию» */
+@media (prefers-reduced-motion: reduce) {
+  body { animation: none; }
+  .hero-img { animation: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* Журнал разработки внутри страницы проекта */
+.project-log { margin-top: 48px; }
+.project-log .section-title { margin-bottom: 24px; }
+.devlog-entry h3 { font-size: 20px; letter-spacing: -0.3px; margin-bottom: 10px; }
+.devlog-entry p:last-child { margin-bottom: 0; }

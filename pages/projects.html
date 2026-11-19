@@ -23,21 +23,15 @@
 
         <nav class="nav">
           <a href="../index.html" class="nav-link">Главная</a>
-          <a href="projects.html" class="nav-link active">Проекты</a>
-          <a href="about.html" class="nav-link">О студии</a>
-          <a href="experiments.html" class="nav-link">Эксперименты</a>
-          <a href="contacts.html" class="nav-link">Контакты</a>
+          <a href="../pages/projects.html" class="nav-link active">Проекты</a>
+          <a href="../pages/about.html" class="nav-link">О студии</a>
+          <a href="../pages/experiments.html" class="nav-link">Эксперименты</a>
+          <a href="../pages/contacts.html" class="nav-link">Контакты</a>
         </nav>
 
         <div class="header-actions">
-          <a href="contacts.html" class="btn-outline desktop-only">
-            Сотрудничество <span>→</span>
-          </a>
-          <button class="burger-btn" id="burgerBtn" aria-label="Открыть меню">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
+          <a href="../pages/contacts.html" class="btn-outline desktop-only">Сотрудничество <span>→</span></a>
+          <button class="burger-btn" id="burgerBtn" aria-label="Открыть меню"><span></span><span></span><span></span></button>
         </div>
       </header>
 
@@ -45,13 +39,15 @@
       <div class="mobile-menu" id="mobileMenu">
         <nav class="mobile-nav">
           <a href="../index.html" class="mobile-link">Главная</a>
-          <a href="projects.html" class="mobile-link">Проекты</a>
-          <a href="about.html" class="mobile-link">О студии</a>
-          <a href="experiments.html" class="mobile-link">Эксперименты</a>
-          <a href="contacts.html" class="mobile-link">Контакты</a>
-          <a href="contacts.html" class="btn-lime mobile-cta">
-            Сотрудничество <span>→</span>
-          </a>
+          <a href="../pages/projects.html" class="mobile-link">Проекты</a>
+          <a href="../pages/about.html" class="mobile-link">О студии</a>
+          <a href="../pages/experiments.html" class="mobile-link">Эксперименты</a>
+          <a href="../pages/contacts.html" class="mobile-link">Контакты</a>
+          <a href="../pages/contacts.html" class="btn-lime mobile-cta">Сотрудничество <span>→</span></a>
+          <div class="mobile-social">
+            <a href="https://t.me/Dcd_S_tudio" target="_blank" rel="noopener">Telegram</a>
+            <a href="https://vk.ru/dsd_studio" target="_blank" rel="noopener">ВКонтакте</a>
+          </div>
         </nav>
       </div>
 
@@ -67,9 +63,12 @@
           </p>
         </div>
 
+        <div class="filter-bar" id="filterBar" data-target=".project-card" aria-label="Фильтр проектов"></div>
+        <p class="filter-empty" id="filterEmpty" hidden>Проектов с таким тегом пока нет.</p>
+
         <div class="projects-grid">
           <!-- Карточка 1: Игра -->
-          <a href="games/floor-12.html" class="project-card">
+          <a href="games/floor-12.html" class="project-card" data-tags="Игры,Квест,PC,Mobile">
             <div class="project-img-wrap">
               <img src="../assets/images/card-games.jpg" alt="Двенадцатый этаж" class="project-img">
               <div class="project-badge">
@@ -80,12 +79,13 @@
               <span class="project-tag">Игра • PC / Mobile</span>
               <h3 class="project-name">«Двенадцатый этаж»</h3>
               <p class="project-desc">Мрачный инди-квест о попытках выбраться из офисного здания, застрявшего в пространственной петле.</p>
+              <div class="card-tags"><span class="tag">Игры</span><span class="tag">Квест</span><span class="tag">PC</span><span class="tag">Mobile</span></div>
               <span class="project-link">Открыть проект <span>→</span></span>
             </div>
           </a>
 
           <!-- Карточка 2: Программа -->
-          <a href="apps/ssh-terminal.html" class="project-card">
+          <a href="apps/ssh-terminal.html" class="project-card" data-tags="Программы,Утилиты,Веб">
             <div class="project-img-wrap">
               <img src="../assets/images/card-apps.jpg" alt="ССШ терминал" class="project-img">
               <div class="project-badge">
@@ -96,9 +96,17 @@
               <span class="project-tag">Программа • Утилита</span>
               <h3 class="project-name">«ССШ терминал»</h3>
               <p class="project-desc">Легкий и кастомизируемый инструмент командной строки для разработчиков с акцентом на скорость.</p>
+              <div class="card-tags"><span class="tag">Программы</span><span class="tag">Утилиты</span><span class="tag">Веб</span></div>
               <span class="project-link">Открыть проект <span>→</span></span>
             </div>
           </a>
+        </div>
+      </section>
+      <section class="about-join-banner social-banner">
+        <div class="about-join-text"><h2>Хотите следить за разработкой?</h2><p>Новости, скриншоты и демки — в Telegram и ВК.</p></div>
+        <div class="about-join-actions">
+          <a href="https://t.me/Dcd_S_tudio" class="btn-lime" target="_blank" rel="noopener">Telegram-канал</a>
+          <a href="https://vk.ru/dsd_studio" class="btn-outline" target="_blank" rel="noopener">Группа ВК</a>
         </div>
       </section>
     </div>
@@ -110,10 +118,12 @@
       <p class="footer-copy">© 2026 DcD Studio. Все права защищены.</p>
       <div class="footer-links">
         <a href="../index.html" class="footer-link">Главная</a>
-        <a href="projects.html" class="footer-link">Проекты</a>
-        <a href="about.html" class="footer-link">О студии</a>
-        <a href="experiments.html" class="footer-link">Эксперименты</a>
-        <a href="contacts.html" class="footer-link">Контакты</a>
+        <a href="../pages/projects.html" class="footer-link">Проекты</a>
+        <a href="../pages/about.html" class="footer-link">О студии</a>
+        <a href="../pages/experiments.html" class="footer-link">Эксперименты</a>
+        <a href="../pages/contacts.html" class="footer-link">Контакты</a>
+        <a href="https://t.me/Dcd_S_tudio" class="footer-link" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://vk.ru/dsd_studio" class="footer-link" target="_blank" rel="noopener">ВК</a>
       </div>
     </div>
   </footer>
