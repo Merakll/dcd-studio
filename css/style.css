@@ -42,6 +42,7 @@ a {
   width: 100%;
 }
 
+/* Растягиваем контент, чтобы футер прижимался к низу страницы */
 .content-wrapper {
   flex: 1;
 }
@@ -120,7 +121,7 @@ a {
   background-color: rgba(180, 240, 86, 0.08);
 }
 
-/* --- МОБИЛЬНОЕ МЕНЮ --- */
+/* --- ЭЛЕМЕНТЫ МОБИЛЬНОГО МЕНЮ (скрыты на ПК) --- */
 .burger-btn {
   display: none;
   flex-direction: column;
@@ -147,11 +148,9 @@ a {
 .burger-btn.active span:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
-
 .burger-btn.active span:nth-child(2) {
   opacity: 0;
 }
-
 .burger-btn.active span:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
 }
@@ -263,16 +262,12 @@ a {
   position: absolute;
   width: 340px;
   height: 340px;
-  background: radial-gradient(
-    circle,
-    rgba(180, 240, 86, 0.22) 0%,
-    rgba(15, 16, 14, 0) 70%
-  );
+  background: radial-gradient(circle, rgba(180, 240, 86, 0.22) 0%, rgba(15, 16, 14, 0) 70%);
   z-index: 0;
   pointer-events: none;
 }
 
-/* Анимированный куб: парение */
+/* Анимированный куб: парение + неоновое свечение при наведении */
 .hero-img {
   max-width: 100%;
   height: auto;
@@ -280,26 +275,20 @@ a {
   position: relative;
   z-index: 1;
   object-fit: contain;
-
-  /* Отключаем обработку событий указателя на самой картинке */
-  pointer-events: none;
-
+  cursor: pointer;
   animation: floatCube 5s ease-in-out infinite;
   filter: drop-shadow(0 0 12px rgba(180, 240, 86, 0.15));
   transition: filter 0.4s ease, transform 0.4s ease;
 }
 
-/* Неоновое свечение при наведении на обёртку */
-.hero-visual:hover .hero-img {
-  filter: drop-shadow(0 0 28px rgba(180, 240, 86, 0.65))
-          brightness(1.1);
+.hero-img:hover {
+  filter: drop-shadow(0 0 28px rgba(180, 240, 86, 0.65)) brightness(1.1);
 }
 
 @keyframes floatCube {
   0%, 100% {
     transform: translateY(0px);
   }
-
   50% {
     transform: translateY(-16px);
   }
@@ -402,11 +391,7 @@ a {
 .card-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(15, 16, 14, 0.2) 0%,
-    rgba(15, 16, 14, 0.92) 100%
-  );
+  background: linear-gradient(180deg, rgba(15, 16, 14, 0.2) 0%, rgba(15, 16, 14, 0.92) 100%);
 }
 
 .card-content {
@@ -429,6 +414,354 @@ a {
   font-size: 13px;
   color: var(--text-muted);
   line-height: 1.35;
+}
+
+/* --- СТИЛИ СТРАНИЦЫ ПРОЕКТОВ И КАРТОЧЕК --- */
+.projects-section {
+  padding: 40px 0 80px;
+}
+
+.projects-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 40px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.projects-subtitle {
+  color: var(--text-muted);
+  max-width: 400px;
+  font-size: 15px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.project-card {
+  background-color: var(--card-bg);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(180, 240, 86, 0.4);
+}
+
+.project-img-wrap {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+}
+
+.project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-img {
+  transform: scale(1.04);
+}
+
+.project-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(15, 16, 14, 0.8);
+  backdrop-filter: blur(8px);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--accent-lime);
+  border: 1px solid rgba(180, 240, 86, 0.2);
+}
+
+.project-info {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.project-tag {
+  font-size: 13px;
+  color: var(--accent-lime);
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.project-name {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.project-desc {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 24px;
+  flex: 1;
+}
+
+.project-link {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-main);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s;
+}
+
+.project-card:hover .project-link {
+  color: var(--accent-lime);
+}
+
+/* --- СТИЛИ ДЕТАЛЬНОЙ СТРАНИЦЫ ПРОЕКТА --- */
+.project-detail-section {
+  padding: 40px 0 80px;
+  max-width: 800px;
+}
+
+.back-link {
+  display: inline-block;
+  font-size: 14px;
+  color: var(--text-muted);
+  transition: color 0.2s;
+}
+
+.back-link:hover {
+  color: var(--accent-lime);
+}
+
+.project-detail-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.gallery-big-item {
+  border-radius: 16px;
+  overflow: hidden;
+  height: 240px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.gallery-big-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- СТИЛИ ДЛЯ СТРАНИЦЫ «О СТУДИИ» --- */
+.about-page-content {
+  padding: 20px 0 60px;
+}
+
+.about-hero {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 36px;
+  align-items: stretch;
+  margin-bottom: 36px;
+}
+
+.about-hero-card {
+  background: linear-gradient(135deg, var(--card-bg) 60%, #142005 130%);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 44px 40px;
+}
+
+.about-kicker {
+  color: var(--accent-lime);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.about-main-title {
+  font-size: 44px;
+  letter-spacing: -1px;
+  margin-bottom: 20px;
+}
+
+.about-lead {
+  font-size: 16px;
+  color: var(--text-main);
+  line-height: 1.7;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.about-p {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.about-hero-cta {
+  display: flex;
+  gap: 14px;
+  margin-top: 26px;
+  flex-wrap: wrap;
+}
+
+.about-hero-art {
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  overflow: hidden;
+  background: radial-gradient(circle at 30% 30%, rgba(180, 240, 86, 0.18), transparent 55%),
+              radial-gradient(circle at 75% 70%, rgba(180, 240, 86, 0.08), transparent 50%),
+              var(--card-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 320px;
+}
+
+.about-hero-art svg {
+  width: 65%;
+  height: auto;
+}
+
+.about-facts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.about-fact-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 22px 24px;
+}
+
+.about-fact-card b {
+  display: block;
+  font-size: 30px;
+  color: var(--accent-lime);
+  letter-spacing: -1px;
+}
+
+.about-fact-card span {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.team-section-title {
+  margin-bottom: 24px;
+}
+
+.team-grid-5 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 56px;
+}
+
+.team-member-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 24px;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.team-member-card:hover {
+  border-color: rgba(180, 240, 86, 0.4);
+  transform: translateY(-2px);
+}
+
+.member-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  font-weight: 800;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  color: #111;
+}
+
+/* Цвета аватарок команды через CSS */
+.team-member-card:nth-child(1) .member-avatar { background: #b4f056; }
+.team-member-card:nth-child(2) .member-avatar { background: #8fd3ff; }
+.team-member-card:nth-child(3) .member-avatar { background: #ffb86b; }
+.team-member-card:nth-child(4) .member-avatar { background: #e88fff; }
+.team-member-card:nth-child(5) .member-avatar { background: #ffdf6b; }
+
+.team-member-card b {
+  display: block;
+  font-size: 17px;
+  margin-bottom: 4px;
+}
+
+.member-role {
+  color: var(--accent-lime);
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.team-member-card p {
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.about-join-banner {
+  background: linear-gradient(120deg, #142005, var(--card-bg));
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.about-join-text h2 {
+  font-size: 24px;
+  letter-spacing: -.5px;
+  margin-bottom: 8px;
+}
+
+.about-join-text p {
+  color: var(--text-muted);
+  font-size: 15px;
+}
+
+.about-join-actions {
+  display: flex;
+  gap: 14px;
 }
 
 /* --- СТИЛИ ДЛЯ СТРАНИЦ-ЗАГЛУШЕК --- */
@@ -460,11 +793,7 @@ a {
   transform: translateX(-50%);
   width: 300px;
   height: 200px;
-  background: radial-gradient(
-    circle,
-    rgba(180, 240, 86, 0.15) 0%,
-    rgba(28, 29, 26, 0) 70%
-  );
+  background: radial-gradient(circle, rgba(180, 240, 86, 0.15) 0%, rgba(28, 29, 26, 0) 70%);
   pointer-events: none;
 }
 
@@ -554,11 +883,9 @@ a {
     grid-template-columns: 1fr;
     text-align: left;
   }
-
   .hero-title {
     font-size: 48px;
   }
-
   .cards-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -637,6 +964,43 @@ a {
     padding: 20px;
   }
 
+  .projects-grid,
+  .project-detail-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .about-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .about-facts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-grid-5 {
+    grid-template-columns: 1fr;
+  }
+
+  .about-main-title {
+    font-size: 34px;
+  }
+
+  .about-join-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .about-join-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .about-join-actions .btn-lime,
+  .about-join-actions .btn-outline {
+    width: 100%;
+    justify-content: center;
+  }
+
   /* Заглушка на телефонах */
   .stub-card {
     padding: 36px 24px;
@@ -661,7 +1025,7 @@ a {
     padding: 30px 0;
     margin-top: 40px;
   }
-
+  
   .footer-content {
     flex-direction: column;
     text-align: center;

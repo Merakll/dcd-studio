@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Проекты — DcD Studio</title>
+  <title>О студии — DcD Studio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -22,8 +22,9 @@
         </a>
 
         <nav class="nav">
-          <a href="projects.html" class="nav-link active">Проекты</a>
-          <a href="about.html" class="nav-link">О студии</a>
+          <a href="../index.html" class="nav-link">Главная</a>
+          <a href="projects.html" class="nav-link">Проекты</a>
+          <a href="about.html" class="nav-link active">О студии</a>
           <a href="experiments.html" class="nav-link">Эксперименты</a>
           <a href="contacts.html" class="nav-link">Контакты</a>
         </nav>
@@ -32,7 +33,6 @@
           <a href="contacts.html" class="btn-outline desktop-only">
             Сотрудничество <span>→</span>
           </a>
-
           <button class="burger-btn" id="burgerBtn" aria-label="Открыть меню">
             <span></span>
             <span></span>
@@ -44,46 +44,114 @@
       <!-- МОБИЛЬНОЕ МЕНЮ -->
       <div class="mobile-menu" id="mobileMenu">
         <nav class="mobile-nav">
+          <a href="../index.html" class="mobile-link">Главная</a>
           <a href="projects.html" class="mobile-link">Проекты</a>
           <a href="about.html" class="mobile-link">О студии</a>
           <a href="experiments.html" class="mobile-link">Эксперименты</a>
           <a href="contacts.html" class="mobile-link">Контакты</a>
-          <a href="../index.html" class="btn-lime mobile-cta">
-            На главную <span>→</span>
+          <a href="contacts.html" class="btn-lime mobile-cta">
+            Сотрудничество <span>→</span>
           </a>
         </nav>
       </div>
 
-      <!-- ОСНОВНОЙ КОНТЕНТ (ЗАГЛУШКА) -->
-      <main class="stub-section">
-        <div class="stub-card">
-          <div class="stub-badge">
-            <span class="pulse-dot"></span>
-            В разработке
+      <!-- ОСНОВНОЙ КОНТЕНТ СТРАНИЦЫ «О СТУДИИ» -->
+      <main class="about-page-content">
+        
+        <!-- Герой-секция -->
+        <section class="about-hero">
+          <div class="about-hero-card">
+            <div class="about-kicker">Наша история</div>
+            <h1 class="about-main-title">О студии <span class="text-lime">DcD</span></h1>
+            <p class="about-lead"><b>«А что, если сделать свою игру?»</b> — когда-то это был просто вопрос. Теперь это наша инди-студия.</p>
+            <p class="about-p">Началось всё как способ занять вечера: кто-то писал код, кто-то придумывал персонажей. Со временем хобби превратилось в настоящий процесс разработки — с прототипами, багами, фиксами и радостью от каждой работающей механики.</p>
+            <p class="about-p">Мы не гонимся за масштабом: нам важнее делать то, что нравится, и делиться этим с игроками.</p>
+            
+            <div class="about-hero-cta">
+              <a href="projects.html" class="btn-lime">Смотреть проекты <span>→</span></a>
+              <a href="contacts.html" class="btn-outline">Связаться с нами</a>
+            </div>
           </div>
 
-          <h1 class="stub-title">
-            Раздел <span class="text-lime">«Проекты»</span><br>
-            пока что недоступен
-          </h1>
-
-          <p class="stub-desc">
-            Сейчас мы работаем над первыми прототипами игр и утилит. 
-            Как только появится первый релиз, он сразу же окажется на этой витрине.
-          </p>
-
-          <div class="stub-actions">
-            <a href="../index.html" class="btn-lime">
-              ← Вернуться на главную
-            </a>
-            <a href="#" class="btn-outline" target="_blank">
-              Telegram-канал
-            </a>
-            <a href="#" class="btn-outline" target="_blank">
-              Группа ВК
-            </a>
+          <div class="about-hero-art">
+            <svg viewBox="0 0 200 140" fill="none" xmlns="http://www.w3.org/2000/svg" opacity="0.9">
+              <rect x="20" y="30" width="70" height="90" rx="8" fill="#1e1e22" stroke="#333"/>
+              <rect x="110" y="30" width="70" height="90" rx="8" fill="#1e1e22" stroke="#333"/>
+              <rect x="28" y="38" width="54" height="8" rx="4" fill="#b4f056" opacity=".7"/>
+              <rect x="28" y="54" width="38" height="8" rx="4" fill="#3a3a40"/>
+              <rect x="28" y="70" width="46" height="8" rx="4" fill="#3a3a40"/>
+              <circle cx="145" cy="70" r="22" stroke="#b4f056" stroke-width="3"/>
+              <path d="M136 70l7 7 12-14" stroke="#b4f056" stroke-width="3" fill="none" stroke-linecap="round"/>
+              <rect x="120" y="104" width="50" height="8" rx="4" fill="#3a3a40"/>
+            </svg>
           </div>
-        </div>
+        </section>
+
+        <!-- Факты (3 блока) -->
+        <section class="about-facts-grid">
+          <div class="about-fact-card">
+            <b>2026</b>
+            <span>год основания</span>
+          </div>
+          <div class="about-fact-card">
+            <b>5</b>
+            <span>энтузиастов в команде</span>
+          </div>
+          <div class="about-fact-card">
+            <b>∞</b>
+            <span>идей в бэклоге</span>
+          </div>
+        </section>
+
+        <!-- Команда (5 участников) -->
+        <section class="team-section">
+          <h2 class="section-title team-section-title">Кто мы</h2>
+          <div class="team-grid-5">
+            <div class="team-member-card">
+              <div class="member-avatar">М</div>
+              <b>Максим</b>
+              <div class="member-role">Разработка / Архитектура</div>
+              <p>Главный разработчик команды. Отвечает за каркас приложений, качество и чистоту кода, а также за общую логику и целостность проектов.</p>
+            </div>
+            <div class="team-member-card">
+              <div class="member-avatar">К</div>
+              <b>Кирилл</b>
+              <div class="member-role">Геймплей / Механики</div>
+              <p>Оживляет идеи интерактивными фишками и настраивает отзывчивое управление.</p>
+            </div>
+            <div class="team-member-card">
+              <div class="member-avatar">И</div>
+              <b>Илья</b>
+              <div class="member-role">Дизайн-ревьюер</div>
+              <p>Следит за тем, чтобы всё выглядело стильно, современно и удобно для пользователей.</p>
+            </div>
+            <div class="team-member-card">
+              <div class="member-avatar">Я</div>
+              <b>Ярослав</b>
+              <div class="member-role">PR-менеджер</div>
+              <p>Отвечает за продвижение в социальных сетях.</p>
+            </div>
+            <div class="team-member-card">
+              <div class="member-avatar">А</div>
+              <b>Алмаз</b>
+              <div class="member-role">Контент / Сценарий</div>
+              <p>Придумывает наполнение, тексты и помогает выстраивать логику игрового мира.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Блок призыва в соцсети -->
+        <section class="about-join-banner">
+          <div class="about-join-text">
+            <h2>Хотите следить за разработкой?</h2>
+            <p>Девлоги, демки и свежие сборки — в наших соцсетях.</p>
+          </div>
+          <div class="about-join-actions">
+            <a href="#" class="btn-lime" target="_blank">Telegram</a>
+            <a href="#" class="btn-outline" target="_blank">ВКонтакте</a>
+          </div>
+        </section>
+
       </main>
     </div>
   </div>
@@ -93,6 +161,7 @@
     <div class="container footer-content">
       <p class="footer-copy">© 2026 DcD Studio. Все права защищены.</p>
       <div class="footer-links">
+        <a href="../index.html" class="footer-link">Главная</a>
         <a href="projects.html" class="footer-link">Проекты</a>
         <a href="about.html" class="footer-link">О студии</a>
         <a href="experiments.html" class="footer-link">Эксперименты</a>
